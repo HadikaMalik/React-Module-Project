@@ -5,7 +5,7 @@ import { render, screen } from "@testing-library/react";
 describe("App", () => {
   it("renders the CYF Hotel header", () => {
     render(<App />);
-    const h1 = screen.getByRole("heading", { level: 1 });
-    expect(h1).toBeInTheDocument();
+    const headerElement = screen.getByRole("heading", { name: "CYF Hotel" });
+    expect(headerElement).toBeInTheDocument();
   });
 });

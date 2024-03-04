@@ -14,9 +14,9 @@ const App = () => {
 
   return (
     <div className="app">
-      <AppHeader/>
+      <AppHeader />
       <Bookings />
-      <Deck/>
+      <Deck />
       <Footer addresses={addresses} />
     </div>
   );
