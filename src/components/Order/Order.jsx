@@ -3,16 +3,17 @@ import RestaurantButton from "../RestaurantButton/RestaurantButton";
 
 
 
-const Order = () => {
+const Order = ({orderType}) => {
     const [orders, setOrders] = useState(0);
 
     const orderOne = () => {
         setOrders(orders + 1);
     };
 
+
     return (<>
         <li className="restaurant__item">
-            Pizzas: {orders}{" "}
+            {orderType}: {orders}
             <RestaurantButton orderOne={orderOne} />
         </li>
     </>
