@@ -29,3 +29,9 @@
 .booking-row-selected {
   filter: saturate(300%) brightness(130%);
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --booking-row-light: 80%;
+  }
+}

@@ -1,4 +1,7 @@
 .search {
+  &__header {
+    margin-left: 2rem;
+  }
   &__form {
     display: flex;
     gap: var(--space--gap);

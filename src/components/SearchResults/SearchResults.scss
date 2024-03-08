@@ -1,17 +1,27 @@
+:root {
+  --accent-bg: #288588;
+}
+
 th,
 td {
   padding: 0 1rem;
 }
 
 .table-header {
-  background-color: #288588;
+  background-color: var(--accent-bg);
 }
 
 table {
-  border: #288588 1px solid;
+  border: var(--accent-bg) 1px solid;
   padding: 0.25rem;
 
   margin: 0.5rem auto;
 
   line-height: 1.75rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent-bg: #99d2d4;
+  }
 }
