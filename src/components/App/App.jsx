@@ -16,6 +16,7 @@ const App = () => {
     <div className="app">
       <AppHeader />
       <Bookings />
+      <Restaurant />
       <Deck />
       <Footer addresses={addresses} />
     </div>
