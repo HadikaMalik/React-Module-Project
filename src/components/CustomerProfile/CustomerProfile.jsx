@@ -2,7 +2,7 @@ import "./CustomerProfile.scss";
 
 const CustomerProfile = (props) => {
   const { id } = props;
-  return <tr>Customer {id} profile</tr>;
+  return <tr data-testid="customer-profile">Customer {id} profile</tr>;
 };
 
 export default CustomerProfile;
