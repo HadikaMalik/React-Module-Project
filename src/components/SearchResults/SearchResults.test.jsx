@@ -19,9 +19,10 @@ describe("SearchResults Component", () => {
   it("toggles the selection for each booking", () => {
     render(<SearchResults bookings={FakeBookings} />);
     const bookingComponents = screen.getAllByTestId("booking-component");
+    const showProfileButtons = screen.getAllByTestId("show-profile-button");
 
-    bookingComponents.forEach((booking) => {
-      fireEvent.click(booking);
+    bookingComponents.forEach((booking, index) => {
+      fireEvent.click(showProfileButtons[index]);
       expect(booking).toHaveClass("booking-row-selected");
     });
   });
@@ -29,13 +30,14 @@ describe("SearchResults Component", () => {
   it("toggles off the selection for each booking", () => {
     render(<SearchResults bookings={FakeBookings} />);
     const bookingComponents = screen.getAllByTestId("booking-component");
+    const showProfileButtons = screen.getAllByTestId("show-profile-button");
 
-    bookingComponents.forEach((booking) => {
-      fireEvent.click(booking);
+    bookingComponents.forEach((booking, index) => {
+      fireEvent.click(showProfileButtons[index]);
     });
 
-    bookingComponents.forEach((booking) => {
-      fireEvent.click(booking);
+    bookingComponents.forEach((booking, index) => {
+      fireEvent.click(showProfileButtons[index]);
       expect(booking).not.toHaveClass("booking-row-selected");
     });
   });

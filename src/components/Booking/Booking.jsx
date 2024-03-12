@@ -41,6 +41,7 @@ const Booking = (props) => {
         </td>
         <td>
           <button
+            data-testid="show-profile-button"
             className="customer-show-profile-button"
             onClick={selectBookingHandle}
           >
