@@ -5,13 +5,13 @@ import "./Booking.scss";
 
 const Booking = (props) => {
   // prettier-ignore
-  const { title, firstName, surname, email, roomId, checkInDate, checkOutDate } = props.booking;
+  const { id, title, firstName, surname, email, roomId, checkInDate, checkOutDate } = props.booking;
   const stayNights = dayjs(checkOutDate).diff(dayjs(checkInDate), "d");
   const [selected, setSelected] = useState(false);
 
   const selectBookingHandle = () => {
     setSelected(!selected);
-  }
+  };
 
   return (
     <tr
@@ -28,6 +28,9 @@ const Booking = (props) => {
       <td className="customer-checkout">{checkOutDate}</td>
       <td className="customer-stay">
         {stayNights} {stayNights > 1 ? "nights" : "night"}
+      </td>
+      <td>
+        <button className="customer-show-profile-button">Show profile</button>
       </td>
     </tr>
   );

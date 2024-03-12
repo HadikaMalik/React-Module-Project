@@ -13,6 +13,7 @@ const SearchResults = (props) => {
           <th scope="col">Check in</th>
           <th scope="col">Check out</th>
           <th scope="col">Stay for</th>
+          <th scope="col">Profile</th>
         </tr>
       </thead>
       <tbody>
