@@ -14,7 +14,7 @@ const Bookings = () => {
   return (
     <main className="bookings">
       <Search search={search} />
-      {<SearchResults bookings={bookings} />}
+      <SearchResults bookings={bookings} />
     </main>
   );
 };
