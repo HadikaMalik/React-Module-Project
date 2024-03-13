@@ -24,7 +24,12 @@ const CustomerProfile = ({ id }) => {
 
   return (
     <tr data-testid="customer-profile" className="customer-row">
-      <td colSpan={2}>{customerProfileData.phoneNumber}</td>
+      <td colSpan={2}>Phone: {customerProfileData.phoneNumber}</td>
+      <td colSpan={2} className={customerProfileData.vip ? `vip-customer` : ``}>
+        {customerProfileData.vip ? `VIP Customer` : `Regular Customer`}
+      </td>
+      <td>ID: {customerProfileData.id}</td>
+      <td colSpan={2}>More info</td>
     </tr>
   );
 };

@@ -22,3 +22,15 @@
     var(--customer-row-light)
   );
 }
+
+td {
+  text-align: center;
+}
+
+.vip-customer {
+  background-color: hsl(
+    176,
+    var(--customer-row-saturation),
+    var(--customer-row-light)
+  );
+}
