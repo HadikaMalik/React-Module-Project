@@ -1,3 +1,24 @@
+:root {
+  --customer-row-light: 25%;
+  --customer-row-saturation: 30%;
+}
+
 .hidden {
   display: none;
+}
+
+.customer-row:nth-child(even) {
+  background-color: hsl(
+    246,
+    var(--customer-row-saturation),
+    var(--customer-row-light)
+  );
+}
+
+.customer-row:nth-child(odd) {
+  background-color: hsl(
+    236,
+    var(--customer-row-saturation),
+    var(--customer-row-light)
+  );
 }
