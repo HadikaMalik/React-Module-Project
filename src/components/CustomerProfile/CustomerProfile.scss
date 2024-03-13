@@ -34,3 +34,9 @@ td {
     var(--customer-row-light)
   );
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --customer-row-light: 80%;
+  }
+}
