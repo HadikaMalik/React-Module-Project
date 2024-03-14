@@ -1,0 +1,42 @@
+:root {
+  --customer-row-light: 25%;
+  --customer-row-saturation: 30%;
+}
+
+.hidden {
+  display: none;
+}
+
+.customer-row:nth-child(even) {
+  background-color: hsl(
+    246,
+    var(--customer-row-saturation),
+    var(--customer-row-light)
+  );
+}
+
+.customer-row:nth-child(odd) {
+  background-color: hsl(
+    236,
+    var(--customer-row-saturation),
+    var(--customer-row-light)
+  );
+}
+
+td {
+  text-align: center;
+}
+
+.vip-customer {
+  background-color: hsl(
+    176,
+    var(--customer-row-saturation),
+    var(--customer-row-light)
+  );
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --customer-row-light: 80%;
+  }
+}
