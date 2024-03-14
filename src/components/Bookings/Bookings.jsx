@@ -6,7 +6,7 @@ import SearchResults from "@/components/SearchResults/SearchResults";
 import "./Bookings.scss";
 
 const Bookings = () => {
-  const API = "https://cyf-hotel-api.netlify.app/error";
+  const API = "https://cyf-hotel-api.netlify.app/";
   const [bookings, setBookings] = useState([]);
   const [fetchError, setFetchError] = useState(null);
 
