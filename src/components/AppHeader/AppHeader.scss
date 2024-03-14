@@ -1,9 +1,10 @@
 .app {
-  &__heading {
+  &__header {
     display: flex;
     place-content: center;
+    gap: 0.5rem;
   }
   &__logo {
-    max-width: 100px;
+    max-width: 80px;
   }
 }
