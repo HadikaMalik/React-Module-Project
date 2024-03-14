@@ -32,6 +32,7 @@ const Bookings = () => {
       </main>
     );
   }
+  
   return (
     <main className="bookings">
       <Search search={search} />
