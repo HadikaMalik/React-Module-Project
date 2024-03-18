@@ -7,7 +7,7 @@ import "./Booking.scss";
 
 const Booking = (props) => {
   // prettier-ignore
-  const { id, title, firstName, surname, email, roomId, checkInDate, checkOutDate } = props.booking;
+  const { id, title, firstName, lastName, email, roomId, checkInDate, checkOutDate } = props.booking;
   const stayNights = dayjs(checkOutDate).diff(dayjs(checkInDate), "d");
   const [selected, setSelected] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
@@ -30,7 +30,7 @@ const Booking = (props) => {
         data-testid="booking-component"
       >
         <td className="customer-name">
-          {title} {firstName} {surname}
+          {title} {firstName} {lastName}
         </td>
         <td className="customer-email">{email}</td>
         <td className="customer-room">{roomId}</td>
