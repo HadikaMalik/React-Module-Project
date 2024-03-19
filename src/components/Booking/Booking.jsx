@@ -29,6 +29,7 @@ const Booking = (props) => {
         }
         data-testid="booking-component"
       >
+        <td className="customer-id">{id}</td>
         <td className="customer-name">
           {title} {firstName} {surname}
         </td>
