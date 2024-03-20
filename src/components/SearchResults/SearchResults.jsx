@@ -3,6 +3,7 @@ import "./SearchResults.scss";
 
 const SearchResults = (props) => {
   const bookings = props.bookings;
+
   return (
     <table data-testid="search-results-component">
       <thead>
