@@ -18,17 +18,6 @@ const SearchResults = (props) => {
 
   function handleSortColumn(event) {
     const { sorttype } = event.target.dataset;
-    if (sortedColumn === sorttype) {
-      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
-    } else {
-      setSortedColumn(sorttype);
-      setSortDirection("asc");
-    }
-    sortColumn(sorttype, sortDirection);
-  }
-
-  function handleSortColumn(event) {
-    const { sorttype } = event.target.dataset;
     let newSortDirection = "asc";
 
     if (sortedColumn === sorttype) {
@@ -73,7 +62,7 @@ const SearchResults = (props) => {
     }
   }
 
-  function renderHeader(columnName, displayName) {
+  function renderTableHeader(columnName, displayName) {
     let arrow = null;
     if (sortedColumn === columnName) {
       arrow = sortDirection === "asc" ? " ↓ " : " ↑ ";
@@ -90,15 +79,15 @@ const SearchResults = (props) => {
     <table data-testid="search-results-component">
       <thead>
         <tr className="table-header">
-          {renderHeader("id", "ID")}
-          {renderHeader("title", "Title")}
-          {renderHeader("firstName", "First Name")}
-          {renderHeader("surname", "Surname")}
-          {renderHeader("email", "Email")}
-          {renderHeader("roomId", "Room")}
-          {renderHeader("checkInDate", "Check in")}
-          {renderHeader("checkOutDate", "Check out")}
-          {renderHeader("stayFor", "Stay for")}
+          {renderTableHeader("id", "ID")}
+          {renderTableHeader("title", "Title")}
+          {renderTableHeader("firstName", "First Name")}
+          {renderTableHeader("surname", "Surname")}
+          {renderTableHeader("email", "Email")}
+          {renderTableHeader("roomId", "Room")}
+          {renderTableHeader("checkInDate", "Check in")}
+          {renderTableHeader("checkOutDate", "Check out")}
+          {renderTableHeader("stayFor", "Stay for")}
           <th scope="col">Profile</th>
         </tr>
       </thead>
