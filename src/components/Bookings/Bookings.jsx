@@ -11,7 +11,7 @@ const Bookings = () => {
   const [fetchError, setFetchError] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
-    lastName: "",
+    surname: "",
     email: "",
     title: "",
     roomId: "",
@@ -47,7 +47,7 @@ const Bookings = () => {
     setBookings([...bookings, newBooking]);
     setFormData({
       firstName: "",
-      lastName: "",
+      surname: "",
       email: "",
       title: "",
       roomId: "",
@@ -84,9 +84,9 @@ const Bookings = () => {
         />
         <input
           type="text"
-          name="lastName"
-          placeholder="Last Name"
-          value={formData.lastName}
+          name="surname"
+          placeholder="surname"
+          value={formData.surname}
           onChange={handleChange}
         />
         <input
