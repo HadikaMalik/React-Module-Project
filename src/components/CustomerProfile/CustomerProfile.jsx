@@ -29,7 +29,7 @@ const CustomerProfile = ({ id }) => {
         {customerProfileData.vip ? `VIP Customer` : `Regular Customer`}
       </td>
       <td>ID: {customerProfileData.id}</td>
-      <td colSpan={2}>More info</td>
+      <td colSpan={3}>More info</td>
     </tr>
   );
 };
