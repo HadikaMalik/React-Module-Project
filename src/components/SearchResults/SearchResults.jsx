@@ -3,10 +3,12 @@ import "./SearchResults.scss";
 
 const SearchResults = (props) => {
   const bookings = props.bookings;
+
   return (
     <table data-testid="search-results-component">
       <thead>
         <tr className="table-header">
+          <th scope="col">ID</th>
           <th scope="col">Name</th>
           <th scope="col">Email</th>
           <th scope="col">Room</th>

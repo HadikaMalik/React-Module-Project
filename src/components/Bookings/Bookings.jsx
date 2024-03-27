@@ -8,6 +8,7 @@ import "./Bookings.scss";
 const Bookings = () => {
   const API = "https://cyf-hotel-api.netlify.app/";
   const [bookings, setBookings] = useState([]);
+  const [filteredBookings, setFilteredBookings] = useState([]);
   const [fetchError, setFetchError] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -29,7 +30,10 @@ const Bookings = () => {
         }
         return response.json();
       })
-      .then((data) => setBookings(data))
+      .then((data) => {
+        setBookings(data);
+        setFilteredBookings(data);
+      })
       .catch((error) => {
         setFetchError(error);
         console.log(error);
@@ -54,10 +58,19 @@ const Bookings = () => {
       checkInDate: "",
       checkOutDate: "",
     });
+    setFilteredBookings(...bookings);
   };
 
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+    if (searchVal === "") {
+      setFilteredBookings(bookings);
+    } else {
+      const filteredBookings = bookings.filter((booking) => {
+        const fullName = `${booking.firstName} ${booking.surname}`;
+        return fullName.toLowerCase().includes(searchVal.toLowerCase());
+      });
+      setFilteredBookings(filteredBookings);
+    }
   };
 
   if (fetchError) {
@@ -73,7 +86,7 @@ const Bookings = () => {
   return (
     <main className="bookings">
       <Search search={search} />
-      <SearchResults bookings={bookings} />
+      <SearchResults bookings={filteredBookings} />
       <form onSubmit={handleSubmit}>
         <input
           type="text"
