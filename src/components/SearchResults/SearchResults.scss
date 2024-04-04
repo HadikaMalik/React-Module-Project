@@ -7,6 +7,10 @@ td {
   padding: 0 1rem;
 }
 
+th:not(:last-child){
+  cursor: pointer;
+}
+
 .table-header {
   background-color: var(--accent-bg);
 }

@@ -30,7 +30,7 @@ const Booking = (props) => {
         data-testid="booking-component"
       >
         <td className="customer-id">{id}</td>
-        <td className="customer-name">
+        <td className="customer-name" colSpan={3}>
           {title} {firstName} {surname}
         </td>
         <td className="customer-email">{email}</td>
