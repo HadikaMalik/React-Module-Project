@@ -8,6 +8,7 @@ import "./Bookings.scss";
 const Bookings = () => {
   const API = "https://cyf-hotel-api.netlify.app/";
   const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [filteredBookings, setFilteredBookings] = useState([]);
   const [fetchError, setFetchError] = useState(null);
   const [formData, setFormData] = useState({
@@ -32,10 +33,12 @@ const Bookings = () => {
       })
       .then((data) => {
         setBookings(data);
+        setLoading(false);
         setFilteredBookings(data);
       })
       .catch((error) => {
         setFetchError(error);
+        setLoading(false);
         console.log(error);
       });
   }, []);
@@ -86,7 +89,8 @@ const Bookings = () => {
   return (
     <main className="bookings">
       <Search search={search} />
-      <SearchResults bookings={filteredBookings} />
+      {loading && <p>Loading... Please wait! </p>}
+      {!loading && <SearchResults bookings={filteredBookings} />}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
